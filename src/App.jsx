@@ -32,7 +32,7 @@ function App() {
 	useEffect(() => {
 		setNombreCompleto("Dilan Espinoza");
 		setCorreo("revoluc57@gmail.com");
-		setTelefono("0908625802");
+		setTelefono("1234567890");
 		setUbicacion("Quito-Ecuador");
 
 		setGrado("Bachillerato Tecnico");
