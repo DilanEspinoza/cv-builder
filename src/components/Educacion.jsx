@@ -6,22 +6,27 @@ export const Educacion = ({
 	ubicacionEscuela,
 }) => {
 	return (
-		<div className='my-8'>
-			<h2 className='text-2xl'>Educación</h2>
+		<div className='my-8 '>
+			{" "}
+			<h2 className='text-2xl max-md:text-lg max-md:font-bold max-md:text-center '>
+				Educación
+			</h2>
 			<hr className='border-black' />
-			{/* Detalles */}
-
-			<div className='flex justify-between py-4'>
-				<div className=''>
-					<p>{grado ? grado : "Bachillerato Tecnico"}</p>
+			<div className='flex flex-col sm:flex-row justify-between py-4'>
+				<div className='flex flex-col gap-2'>
+					<p>{grado ? grado : "Grado no especificado"}</p>
+					<p>{escuela ? escuela : "Escuela no especificada"}</p>
 					<p>
-						{escuela} | {ubicacionEscuela}{" "}
+						{ubicacionEscuela
+							? ubicacionEscuela
+							: "Ubicacion de la escuela no especificada"}
 					</p>
 				</div>
-				<div className=''>
+				<div className='mt-2 sm:mt-0'>
 					<p>
-						{" "}
-						{fechaInicio} - {fechaFin}{" "}
+						{fechaInicio && fechaFin
+							? `${fechaInicio} - ${fechaFin}`
+							: "Fechas no especificadas"}
 					</p>
 				</div>
 			</div>

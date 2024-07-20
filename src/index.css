@@ -11,3 +11,18 @@
 body {
 	background-color: whitesmoke;
 }
+
+@media (max-width: 800px) {
+	#container {
+		display: flex;
+		flex-direction: column;
+	}
+
+	#container aside {
+		width: auto;
+	}
+
+	#container main {
+		align-items: center;
+	}
+}
