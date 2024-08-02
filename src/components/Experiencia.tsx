@@ -1,3 +1,11 @@
+interface Experiencia {
+	nombreEmpresa: string;
+	ubicacionEmpresa: string;
+	posicion: string;
+	descripcion: string;
+	fechaInicioEmpresa: string;
+	fechaFinalEmpresa: string;
+}
 export const Experiencia = ({
 	nombreEmpresa,
 	ubicacionEmpresa,
@@ -5,7 +13,7 @@ export const Experiencia = ({
 	descripcion,
 	fechaInicioEmpresa,
 	fechaFinalEmpresa,
-}) => {
+}: Experiencia) => {
 	return (
 		<div className=''>
 			<h2 className='text-2xl max-md:text-lg max-md:font-bold max-md:text-center'>

@@ -1,10 +1,18 @@
+interface Educacion {
+	grado: string;
+	escuela: string;
+	fechaInicio: string;
+	fechaFin: string;
+	ubicacionEscuela: string;
+}
+
 export const Educacion = ({
 	grado,
 	escuela,
 	fechaInicio,
 	fechaFin,
 	ubicacionEscuela,
-}) => {
+}: Educacion) => {
 	return (
 		<div className='my-8 '>
 			{" "}

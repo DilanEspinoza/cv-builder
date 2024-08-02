@@ -1,9 +1,16 @@
+interface DatosPersonales {
+	nombreCompleto: string;
+	correo: string;
+	telefono: string;
+	ubicacion: string;
+}
+
 export const DatosPersonales = ({
 	nombreCompleto,
 	correo,
 	telefono,
 	ubicacion,
-}) => {
+}: DatosPersonales) => {
 	return (
 		<div className='flex flex-col gap-5 items-center'>
 			<h1 className='text-4xl max-md:text-center'>
