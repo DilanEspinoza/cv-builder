@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { DatosPersonales, Educacion, Experiencia } from "./components";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,31 +6,39 @@ import { faAngleUp, faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import "./App.css";
 
 function App() {
-	const [nombreCompleto, setNombreCompleto] = useState("");
-	const [correo, setCorreo] = useState("");
-	const [telefono, setTelefono] = useState("");
-	const [ubicacion, setUbicacion] = useState("");
-
-	const [grado, setGrado] = useState("");
-	const [escuela, setEscuela] = useState("");
-	const [fechaInicio, setFechaInicio] = useState("");
-	const [fechaFin, setFechaFin] = useState("");
-	const [ubicacionEscuela, setUbicacionEscuela] = useState("");
-
-	const [nombreEmpresa, setNombreEmpresa] = useState("");
-	const [ubicacionEmpresa, setUbicacionEmpresa] = useState("");
-	const [posicion, setPosicion] = useState("");
-	const [fechaInicioEmpresa, setFechaInicioEmpresa] = useState("");
-	const [fechaFinalEmpresa, setFechaFinalEmpresa] = useState("");
-	const [descripcion, setDescripcion] = useState("");
+	const [form, setForm] = useState({
+		nombreCompleto: "",
+		correo: "",
+		telefono: "",
+		ubicacion: "",
+		grado: "",
+		escuela: "",
+		fechaInicio: "",
+		fechaFin: "",
+		ubicacionEscuela: "",
+		nombreEmpresa: "",
+		ubicacionEmpresa: "",
+		posicion: "",
+		fechaInicioEmpresa: "",
+		fechaFinalEmpresa: "",
+		descripcion: "",
+	});
 
 	// const handleChange = ({ target }) => {
 	// 	setNombreCompleto(target.value);
 	// 	setCorreo(target.value);
 	// };
 
+	const handleSubmit = (e: any) => e.preventDefault();
+
+	const handleChange = (e: any) => {
+		setForm({
+			...form,
+			[e.target.name]: e.target.value,
+		});
+	};
+	/* 
 	useEffect(() => {
-		setNombreCompleto("Dilan Espinoza");
 		setCorreo("revoluc57@gmail.com");
 		setTelefono("1234567890");
 		setUbicacion("Quito-Ecuador");
@@ -49,7 +57,7 @@ function App() {
 		setDescripcion(
 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
 		);
-	}, []);
+	}, []); */
 
 	const [formDatosActivos, setFormDatosActivos] = useState(true);
 	const [formEducacion, setFormEducacion] = useState(true);
@@ -73,7 +81,7 @@ function App() {
 						</button>
 					</div>
 					<form
-						onSubmit={(e) => e.preventDefault()}
+						onSubmit={handleSubmit}
 						action=''
 						className={
 							formDatosActivos ? "hidden " : "flex flex-col gap-3 rounded-md"
@@ -83,11 +91,10 @@ function App() {
 							Nombre completo
 							<input
 								type='text'
-								defaultValue={nombreCompleto}
+								placeholder='Dilan Espinoza'
+								name='nombreCompleto'
+								onChange={handleChange}
 								className='bg-neutral-700 text-white border-none outline-none p-1 rounded-md'
-								onChange={(e) => {
-									setNombreCompleto(e.target.value);
-								}}
 							/>
 						</label>
 
@@ -96,11 +103,10 @@ function App() {
 							Correo electrónico
 							<input
 								type='text'
-								defaultValue={correo}
+								placeholder='example@gmail.com'
+								name='correo'
+								onChange={handleChange}
 								className='bg-neutral-700 text-white border-none outline-none p-1 rounded-md'
-								onChange={(e) => {
-									setCorreo(e.target.value);
-								}}
 							/>
 						</label>
 
@@ -109,11 +115,10 @@ function App() {
 							Número de teléfono
 							<input
 								type='text'
-								defaultValue={telefono}
+								placeholder='1234567890'
+								name='telefono'
+								onChange={handleChange}
 								className='bg-neutral-700 text-white border-none outline-none p-1 rounded-md'
-								onChange={(e) => {
-									setTelefono(e.target.value);
-								}}
 							/>
 						</label>
 
@@ -122,11 +127,10 @@ function App() {
 							Ubicación
 							<input
 								type='text'
-								defaultValue={ubicacion}
+								placeholder='Quito-Ecuador'
+								name='ubicacion'
+								onChange={handleChange}
 								className='bg-neutral-700 text-white border-none outline-none p-1 rounded-md'
-								onChange={(e) => {
-									setUbicacion(e.target.value);
-								}}
 							/>
 						</label>
 					</form>
@@ -149,7 +153,7 @@ function App() {
 					</div>
 
 					<form
-						onSubmit={(e) => e.preventDefault()}
+						onSubmit={handleSubmit}
 						action=''
 						className={
 							formEducacion ? "hidden " : "flex flex-col gap-3 rounded-md"
@@ -159,11 +163,10 @@ function App() {
 							Grado
 							<input
 								type='text'
-								defaultValue={grado}
+								placeholder='Bachillerato Técnico'
+								name='grado'
+								onChange={handleChange}
 								className='bg-neutral-700 text-white border-none outline-none p-1 rounded-md'
-								onChange={(e) => {
-									setGrado(e.target.value);
-								}}
 							/>
 						</label>
 
@@ -172,10 +175,9 @@ function App() {
 							Escuela
 							<input
 								type='text'
-								defaultValue={escuela}
-								onChange={(e) => {
-									setEscuela(e.target.value);
-								}}
+								placeholder='Institucion Educativa Pomasqui'
+								name='escuela'
+								onChange={handleChange}
 								className='bg-neutral-700 text-white border-none outline-none p-1 rounded-md'
 							/>
 						</label>
@@ -185,11 +187,10 @@ function App() {
 							Fecha de inicio
 							<input
 								type='text'
-								defaultValue={fechaInicio}
+								placeholder='Septiembre 2024'
+								name='fechaInicio'
+								onChange={handleChange}
 								className='bg-neutral-700 text-white border-none outline-none p-1 rounded-md'
-								onChange={(e) => {
-									setFechaInicio(e.target.value);
-								}}
 							/>
 						</label>
 
@@ -198,11 +199,10 @@ function App() {
 							Fecha final
 							<input
 								type='text'
-								defaultValue={fechaFin}
+								placeholder='Junio 2025'
+								name='FechaFin'
+								onChange={handleChange}
 								className='bg-neutral-700 text-white border-none outline-none p-1 rounded-md'
-								onChange={(e) => {
-									setFechaFin(e.target.value);
-								}}
 							/>
 						</label>
 
@@ -211,10 +211,9 @@ function App() {
 							Ubicacion
 							<input
 								type='text'
-								defaultValue={ubicacionEscuela}
-								onChange={(e) => {
-									setUbicacionEscuela(e.target.value);
-								}}
+								placeholder='Quito, Pomasqui'
+								name='ubicacionEscuela'
+								onChange={handleChange}
 								className='bg-neutral-700 text-white border-none outline-none p-1 rounded-md'
 							/>
 						</label>
@@ -237,68 +236,78 @@ function App() {
 					</div>
 
 					<form
-						onSubmit={(e) => e.preventDefault()}
+						onSubmit={handleSubmit}
 						action=''
 						className={
 							formExperiencia ? "hidden " : "flex flex-col gap-3 rounded-md"
 						}>
-						{" "}
 						<label htmlFor='' className='flex flex-col'>
 							{" "}
 							Nombre de la empresa
 							<input
 								type='text'
-								defaultValue={nombreEmpresa}
-								onChange={(e) => setNombreEmpresa(e.target.value)}
+								placeholder='Meta'
+								name='nombreEmpresa'
+								onChange={handleChange}
 								className='bg-neutral-700 text-white border-none outline-none p-1 rounded-md'
 							/>
 						</label>
+
 						<label htmlFor='' className='flex flex-col'>
 							{" "}
 							Ubicación
 							<input
 								type='text'
-								defaultValue={ubicacionEmpresa}
-								onChange={(e) => setUbicacionEmpresa(e.target.value)}
+								placeholder='Remoto'
+								name='ubicacionEmpresa'
+								onChange={handleChange}
 								className='bg-neutral-700 text-white border-none outline-none p-1 rounded-md'
 							/>
 						</label>
+
 						<label htmlFor='' className='flex flex-col'>
 							{" "}
 							Posición
 							<input
 								type='text'
-								defaultValue={posicion}
-								onChange={(e) => setPosicion(e.target.value)}
+								placeholder='Jr. Front-End Developer'
+								name='posicion'
+								onChange={handleChange}
 								className='bg-neutral-700 text-white border-none outline-none p-1 rounded-md'
 							/>
 						</label>
+
 						<label htmlFor='' className='flex flex-col'>
 							{" "}
 							Fecha de inicio
 							<input
 								type='text'
-								onChange={(e) => setFechaInicioEmpresa(e.target.value)}
-								defaultValue={fechaInicioEmpresa}
+								placeholder='Dilan '
+								name='fechaInicioEmpresa'
+								onChange={handleChange}
 								className='bg-neutral-700 text-white border-none outline-none p-1 rounded-md'
 							/>
 						</label>
+
 						<label htmlFor='' className='flex flex-col'>
 							{" "}
 							Fecha final
 							<input
 								type='text'
-								defaultValue={fechaFinalEmpresa}
-								onChange={(e) => setFechaFinalEmpresa(e.target.value)}
+								placeholder='Present'
+								name='fechaFinalEmpresa'
+								onChange={handleChange}
 								className='bg-neutral-700 text-white border-none outline-none p-1 rounded-md'
 							/>
 						</label>
+
 						<label htmlFor='' className='flex flex-col '>
 							{" "}
 							Descripción
 							<textarea
-								defaultValue={descripcion}
-								onChange={(e) => setDescripcion(e.target.value)}
+								placeholder='Pequña descripcion del empleo...'
+								name='descripcion'
+								onChange={handleChange}
 								className='bg-neutral-700 text-white border-none outline-none p-1 rounded-md w-full'
 							/>
 						</label>
@@ -308,27 +317,27 @@ function App() {
 
 			<main className='bg-white py-8 p-24 flex-1 h-full'>
 				<DatosPersonales
-					nombreCompleto={nombreCompleto}
-					correo={correo}
-					telefono={telefono}
-					ubicacion={ubicacion}
+					nombreCompleto={form.nombreCompleto}
+					correo={form.correo}
+					telefono={form.telefono}
+					ubicacion={form.ubicacion}
 				/>
 
 				<Educacion
-					grado={grado}
-					escuela={escuela}
-					fechaInicio={fechaInicio}
-					fechaFin={fechaFin}
-					ubicacionEscuela={ubicacionEscuela}
+					grado={form.grado}
+					escuela={form.escuela}
+					fechaInicio={form.fechaInicio}
+					fechaFin={form.fechaFin}
+					ubicacionEscuela={form.ubicacionEscuela}
 				/>
 
 				<Experiencia
-					nombreEmpresa={nombreEmpresa}
-					ubicacionEmpresa={ubicacionEmpresa}
-					posicion={posicion}
-					fechaInicioEmpresa={fechaInicioEmpresa}
-					fechaFinalEmpresa={fechaFinalEmpresa}
-					descripcion={descripcion}
+					nombreEmpresa={form.nombreEmpresa}
+					ubicacionEmpresa={form.ubicacionEmpresa}
+					posicion={form.posicion}
+					fechaInicioEmpresa={form.fechaInicioEmpresa}
+					fechaFinalEmpresa={form.fechaFinalEmpresa}
+					descripcion={form.descripcion}
 				/>
 			</main>
 		</div>
