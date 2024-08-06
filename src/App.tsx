@@ -94,7 +94,7 @@ function App() {
 								placeholder='Dilan Espinoza'
 								name='nombreCompleto'
 								onChange={handleChange}
-								className='bg-neutral-700 text-white border-none outline-none p-1 rounded-md'
+								className='placeholder-neutral-500 bg-neutral-100 text-black border-none outline-none p-1 px-2 rounded-md'
 							/>
 						</label>
 
@@ -106,7 +106,7 @@ function App() {
 								placeholder='example@gmail.com'
 								name='correo'
 								onChange={handleChange}
-								className='bg-neutral-700 text-white border-none outline-none p-1 rounded-md'
+								className='placeholder-neutral-500 bg-neutral-100 text-black border-none outline-none p-1 px-2 rounded-md'
 							/>
 						</label>
 
@@ -118,7 +118,7 @@ function App() {
 								placeholder='1234567890'
 								name='telefono'
 								onChange={handleChange}
-								className='bg-neutral-700 text-white border-none outline-none p-1 rounded-md'
+								className='placeholder-neutral-500 bg-neutral-100 text-black border-none outline-none p-1 px-2 rounded-md'
 							/>
 						</label>
 
@@ -130,7 +130,7 @@ function App() {
 								placeholder='Quito-Ecuador'
 								name='ubicacion'
 								onChange={handleChange}
-								className='bg-neutral-700 text-white border-none outline-none p-1 rounded-md'
+								className='placeholder-neutral-500 bg-neutral-100 text-black border-none outline-none p-1 px-2 rounded-md'
 							/>
 						</label>
 					</form>
@@ -166,7 +166,7 @@ function App() {
 								placeholder='Bachillerato Técnico'
 								name='grado'
 								onChange={handleChange}
-								className='bg-neutral-700 text-white border-none outline-none p-1 rounded-md'
+								className='placeholder-neutral-500 bg-neutral-100 text-black border-none outline-none p-1 px-2 rounded-md'
 							/>
 						</label>
 
@@ -178,7 +178,7 @@ function App() {
 								placeholder='Institucion Educativa Pomasqui'
 								name='escuela'
 								onChange={handleChange}
-								className='bg-neutral-700 text-white border-none outline-none p-1 rounded-md'
+								className='placeholder-neutral-500 bg-neutral-100 text-black border-none outline-none p-1 px-2 rounded-md'
 							/>
 						</label>
 
@@ -190,7 +190,7 @@ function App() {
 								placeholder='Septiembre 2024'
 								name='fechaInicio'
 								onChange={handleChange}
-								className='bg-neutral-700 text-white border-none outline-none p-1 rounded-md'
+								className='placeholder-neutral-500 bg-neutral-100 text-black border-none outline-none p-1 px-2 rounded-md'
 							/>
 						</label>
 
@@ -202,7 +202,7 @@ function App() {
 								placeholder='Junio 2025'
 								name='FechaFin'
 								onChange={handleChange}
-								className='bg-neutral-700 text-white border-none outline-none p-1 rounded-md'
+								className='placeholder-neutral-500 bg-neutral-100 text-black border-none outline-none p-1 px-2 rounded-md'
 							/>
 						</label>
 
@@ -214,7 +214,7 @@ function App() {
 								placeholder='Quito, Pomasqui'
 								name='ubicacionEscuela'
 								onChange={handleChange}
-								className='bg-neutral-700 text-white border-none outline-none p-1 rounded-md'
+								className='placeholder-neutral-500 bg-neutral-100 text-black border-none outline-none p-1 px-2 rounded-md'
 							/>
 						</label>
 					</form>
@@ -249,7 +249,7 @@ function App() {
 								placeholder='Meta'
 								name='nombreEmpresa'
 								onChange={handleChange}
-								className='bg-neutral-700 text-white border-none outline-none p-1 rounded-md'
+								className='placeholder-neutral-500 bg-neutral-100 text-black border-none outline-none p-1 px-2 rounded-md'
 							/>
 						</label>
 
@@ -261,7 +261,7 @@ function App() {
 								placeholder='Remoto'
 								name='ubicacionEmpresa'
 								onChange={handleChange}
-								className='bg-neutral-700 text-white border-none outline-none p-1 rounded-md'
+								className='placeholder-neutral-500 bg-neutral-100 text-black border-none outline-none p-1 px-2 rounded-md'
 							/>
 						</label>
 
@@ -273,7 +273,7 @@ function App() {
 								placeholder='Jr. Front-End Developer'
 								name='posicion'
 								onChange={handleChange}
-								className='bg-neutral-700 text-white border-none outline-none p-1 rounded-md'
+								className='placeholder-neutral-500 bg-neutral-100 text-black border-none outline-none p-1 px-2 rounded-md'
 							/>
 						</label>
 
@@ -285,7 +285,7 @@ function App() {
 								placeholder='Dilan '
 								name='fechaInicioEmpresa'
 								onChange={handleChange}
-								className='bg-neutral-700 text-white border-none outline-none p-1 rounded-md'
+								className='placeholder-neutral-500 bg-neutral-100 text-black border-none outline-none p-1 px-2 rounded-md'
 							/>
 						</label>
 
@@ -297,7 +297,7 @@ function App() {
 								placeholder='Present'
 								name='fechaFinalEmpresa'
 								onChange={handleChange}
-								className='bg-neutral-700 text-white border-none outline-none p-1 rounded-md'
+								className='placeholder-neutral-500 bg-neutral-100 text-black border-none outline-none p-1 px-2 rounded-md'
 							/>
 						</label>
 
@@ -308,7 +308,7 @@ function App() {
 								placeholder='Pequña descripcion del empleo...'
 								name='descripcion'
 								onChange={handleChange}
-								className='bg-neutral-700 text-white border-none outline-none p-1 rounded-md w-full'
+								className='placeholder-neutral-500 bg-neutral-100 text-black border-none outline-none p-1 px-2 rounded-md w-full'
 							/>
 						</label>
 					</form>
